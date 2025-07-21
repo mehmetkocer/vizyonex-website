@@ -1,103 +1,91 @@
-import Image from "next/image";
+import Header from '../../components/Header';
+import Hero from '../../components/Hero';
+import VisionMission from '../../components/VisionMission';
+import Services from '../../components/Services';
+import Showcase from '../../components/Showcase';
+import Contact from '../../components/Contact';
+import Footer from '../../components/Footer';
+import FloatingButtons from '../../components/FloatingButtons';
+import { getMarkdownContent, parseStatistics, parseServiceCards, parseProjects } from '../../lib/markdown';
+import fs from 'fs';
+import path from 'path';
 
-export default function Home() {
+async function getPageData() {
+  try {
+    // Get vision mission data
+    const visionMissionData = await getMarkdownContent('vision-mission');
+    const stats = parseStatistics(visionMissionData.content);
+    
+    // Extract vision and mission sections from raw content
+    const filePath = path.join(process.cwd(), 'content', 'vision-mission.md');
+    const fileContent = fs.readFileSync(filePath, 'utf8');
+    const rawContent = fileContent.split('---').slice(2).join('---').trim();
+    
+    const visionMatch = rawContent.match(/# Vizyonumuz\s*([\s\S]*?)(?=# Misyonumuz|$)/);
+    const missionMatch = rawContent.match(/# Misyonumuz\s*([\s\S]*?)(?=## [^#]|$)/);
+    
+    // Clean up the extracted content
+    const cleanVision = visionMatch ? visionMatch[1].replace(/##[^#][\s\S]*$/, '').trim() : '';
+    const cleanMission = missionMatch ? missionMatch[1].replace(/##[^#][\s\S]*$/, '').trim() : '';
+
+    // Get services data
+    const servicesData = await getMarkdownContent('services');
+    const services = parseServiceCards(servicesData.content);
+
+    // Get projects data
+    const projectsData = await getMarkdownContent('projects');
+    const projects = parseProjects(projectsData.content);
+    
+    return {
+      visionMission: {
+        visionContent: cleanVision || 'Endüstriyel çelik konstrüksiyon alanında Türkiye\'nin lider şirketi olmak ve uluslararası pazarlarda güçlü bir marka haline gelerek, sürdürülebilir ve yenilikçi çözümlerle sektörün geleceğini şekillendirmek.',
+        missionContent: cleanMission || 'Modern mühendislik anlayışı ve deneyimli kadromuzla, endüstriyel tesisler, ticari yapılar ve mimari çelik projelerinde müşterilerimize güvenilir, kaliteli ve ekonomik çözümler sunarak, onların başarısına ortak olmak.',
+        stats: stats.length > 0 ? stats : [
+          { value: '15', label: 'Yıllık Deneyim' },
+          { value: '50+', label: 'Tamamlanan Proje' },
+          { value: '%100', label: 'Müşteri Memnuniyeti' },
+          { value: '25+', label: 'Uzman Personel' }
+        ]
+      },
+      services: services.length > 0 ? services : [],
+      projects: projects
+    };
+  } catch (error) {
+    console.error('Error loading page data:', error);
+    return {
+      visionMission: {
+        visionContent: 'Endüstriyel çelik konstrüksiyon alanında Türkiye\'nin lider şirketi olmak ve uluslararası pazarlarda güçlü bir marka haline gelerek, sürdürülebilir ve yenilikçi çözümlerle sektörün geleceğini şekillendirmek.',
+        missionContent: 'Modern mühendislik anlayışı ve deneyimli kadromuzla, endüstriyel tesisler, ticari yapılar ve mimari çelik projelerinde müşterilerimize güvenilir, kaliteli ve ekonomik çözümler sunarak, onların başarısına ortak olmak.',
+        stats: [
+          { value: '15', label: 'Yıllık Deneyim' },
+          { value: '50+', label: 'Tamamlanan Proje' },
+          { value: '%100', label: 'Müşteri Memnuniyeti' },
+          { value: '25+', label: 'Uzman Personel' }
+        ]
+      },
+      services: [],
+      projects: {}
+    };
+  }
+}
+
+export default async function Home() {
+  const pageData = await getPageData();
+
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+    <div className="min-h-screen">
+      <Header />
+      <Hero />
+      <VisionMission
+        visionContent={pageData.visionMission.visionContent}
+        missionContent={pageData.visionMission.missionContent}
+        stats={pageData.visionMission.stats}
+      />
+      <Services services={pageData.services} />
+      <Showcase projects={pageData.projects} />
+      <Contact />
+      <Footer />
+      <FloatingButtons />
     </div>
   );
 }

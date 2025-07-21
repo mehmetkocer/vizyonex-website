@@ -3,6 +3,13 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  
+  /* Vizyonex Color Palette */
+  --primary: #0A2342;        /* Prussian Blue */
+  --secondary: #F8F9FA;      /* Light Gray */
+  --accent: #D97941;         /* Bold Copper */
+  --text-default: #212529;   /* Default Text */
+  --text-light: #FFFFFF;     /* Light Text */
 }
 
 @theme inline {
@@ -10,6 +17,13 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  
+  /* Vizyonex Custom Colors */
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-text-default: var(--text-default);
+  --color-text-light: var(--text-light);
 }
 
 @media (prefers-color-scheme: dark) {
