@@ -37,7 +37,6 @@ Sürekli gelişim ve yenilik anlayışıyla, sektörün en güncel teknolojileri
 
 ## İstatistiklerimiz
 
-- **50+** Tamamlanan Proje
-- **15** Yıllık Deneyim
+- **3+** Tamamlanan Proje
 - **%100** Müşteri Memnuniyeti
-- **25+** Uzman Personel
+- **8+** Uzman Personel

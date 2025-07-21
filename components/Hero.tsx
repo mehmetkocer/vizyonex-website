@@ -14,13 +14,13 @@ export default function Hero({
   ctaLink = "#projects"
 }: HeroProps) {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center">
+    <section id="home" className="relative min-h-[70vh] md:min-h-screen flex items-center justify-center">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <div 
           className="w-full h-full bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url('/hero-bg.jpg')`, // You'll need to add this image to public folder
+            backgroundImage: `url('/image1.jpg')`, // Main background image
             backgroundPosition: 'center center',
           }}
         >
@@ -61,8 +61,8 @@ export default function Hero({
           </div>
         </div>
 
-        {/* Scroll Down Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+        {/* Scroll Down Indicator - Only show on larger screens */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 hidden md:block">
           <div className="flex flex-col items-center text-text-light opacity-70">
             <span className="text-sm mb-2">Aşağı Kaydırın</span>
             <div className="animate-bounce">

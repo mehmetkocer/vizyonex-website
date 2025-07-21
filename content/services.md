@@ -23,9 +23,9 @@ Endüstri sektörünün ihtiyaçlarına yönelik çelik konstrüksiyon çözüml
 
 ---
 
-# Ticari Yapılar
+# Kentsel Yapılar
 
-Alışveriş merkezleri, ofis binaları, showroom ve mağazalar için modern ve estetik çelik konstrüksiyon çözümleri geliştiriyoruz.
+Daireler, ofis binaları, showroom ve mağazalar için modern ve estetik çelik konstrüksiyon çözümleri geliştiriyoruz.
 
 ## Özellikler
 - Estetik tasarım seçenekleri
@@ -60,26 +60,6 @@ Estetik ve fonksiyonelliği bir araya getiren mimari çelik projelerinde uzmanı
 - Dekoratif çelik elemanlar
 - Asma köprüler
 - Sanat eserleri ve heykeller
-
----
-
-# Proje Yönetimi
-
-Projenin başlangıcından tamamlanmasına kadar tüm süreçleri profesyonel ekibimizle yönetiyoruz. Zaman, kalite ve maliyet optimizasyonu sağlıyoruz.
-
-## Hizmetler
-- Proje planlama ve koordinasyon
-- Zaman çizelgesi yönetimi
-- Kalite kontrol ve denetim
-- Risk yönetimi
-- İletişim koordinasyonu
-
-## Süreç Yönetimi
-1. **Fizibilite Analizi**: Proje değerlendirmesi ve ön çalışmalar
-2. **Tasarım Geliştirme**: Teknik çizim ve 3D modelleme
-3. **Üretim Planlama**: Malzeme temini ve üretim süreçleri
-4. **Montaj Yönetimi**: Sahada kurulum ve denetim
-5. **Teslim ve Garanti**: Final kontrolü ve garanti süreci
 
 ---
 

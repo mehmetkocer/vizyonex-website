@@ -73,7 +73,7 @@ export default async function Home() {
   const pageData = await getPageData();
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-x-hidden w-full">
       <Header />
       <Hero />
       <VisionMission

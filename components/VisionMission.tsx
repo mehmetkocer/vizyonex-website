@@ -105,15 +105,17 @@ export default function VisionMission({
           </div>
         </div>
 
-        {/* Bottom Statistics or Additional Info */}
+        {/* Bottom Statistics - Centered on Large Screens */}
         <div className="mt-16 pt-12 border-t border-gray-200">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-            {stats.map((stat, index) => (
-              <div key={index} className="space-y-2">
-                <div className="text-4xl font-bold text-accent">{stat.value}</div>
-                <div className="text-text-default font-medium">{stat.label}</div>
-              </div>
-            ))}
+          <div className="max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+              {stats.map((stat, index) => (
+                <div key={index} className="space-y-2">
+                  <div className="text-4xl font-bold text-accent">{stat.value}</div>
+                  <div className="text-text-default font-medium">{stat.label}</div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

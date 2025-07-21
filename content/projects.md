@@ -23,24 +23,6 @@ description: "Vizyonex'in gerçekleştirdiği başarılı projeler ve çözüm o
 **Tamamlanma**: 2023  
 **Özellikler**: Modüler genişletme imkanı, enerji verimli yapı tasarımı
 
-## Vestel Elektronik Üretim Tesisi - Manisa
-**Proje Türü**: Elektronik Üretimi  
-**Alan**: 10.200 m²  
-**Tamamlanma**: 2022  
-**Özellikler**: Antistatik zemin sistemi, özel havalandırma çözümleri
-
-## Tofaş Montaj Hattı Genişletmesi - Bursa
-**Proje Türü**: Otomotiv Montaj  
-**Alan**: 6.800 m²  
-**Tamamlanma**: 2023  
-**Özellikler**: Mevcut yapıya entegre genişletme, vinç sistemi altyapısı
-
-## Schneider Electric Fabrikası - İstanbul
-**Proje Türü**: Elektrik Ekipman Üretimi  
-**Alan**: 9.200 m²  
-**Tamamlanma**: 2022  
-**Özellikler**: Yüksek teknoloji üretim alanları, temiz oda standartları
-
 ---
 
 # Ticari Yapılar
@@ -62,24 +44,6 @@ description: "Vizyonex'in gerçekleştirdiği başarılı projeler ve çözüm o
 **Alan**: 32.000 m²  
 **Tamamlanma**: 2023  
 **Özellikeler**: LEED Gold sertifikası, sürdürülebilir yapı teknolojileri
-
-## CarrefourSA Hipermarket - İzmir
-**Proje Türü**: Hipermarket  
-**Alan**: 14.800 m²  
-**Tamamlanma**: 2022  
-**Özellikler**: Hızlı montaj sistemi, geniş park alanı çatısı
-
-## IKEA Mağaza ve Depo - Adana
-**Proje Türü**: Mobilya Mağazası  
-**Alan**: 28.000 m²  
-**Tamamlanma**: 2023  
-**Özellikler**: İskandinav tasarım uyumlu çelik yapı, showroom alanları
-
-## Decathlon Spor Mağazası - Antalya
-**Proje Türü**: Spor Mağazası  
-**Alan**: 11.500 m²  
-**Tamamlanma**: 2022  
-**Özellikler**: Açık alan spor testi alanları, yüksek tavan spor ekipmanları için
 
 ---
 
@@ -103,25 +67,6 @@ description: "Vizyonex'in gerçekleştirdiği başarılı projeler ve çözüm o
 **Tamamlanma**: 2023  
 **Özellikler**: Tarihi yapıya uyumlu modern çelik detaylar, sanat eseri entegrasyonu
 
-## Galataport Kruvaziyer Limanı - İstanbul
-**Proje Türü**: Liman Üst Yapısı  
-**Alan**: 22.000 m²  
-**Tamamlanma**: 2022  
-**Özellikler**: Deniz ortamına dayanıklı paslanmaz çelik, panoramik cam sistemler
-
-## Anıtkabir Ziyaretçi Merkezi - Ankara
-**Proje Türü**: Müze ve Ziyaretçi Merkezi  
-**Alan**: 4.800 m²  
-**Tamamlanma**: 2023  
-**Özellikler**: Anıtsal mimariyle uyumlu tasarım, özel güvenlik sistemleri
-
-## İzmir Fuarı Modern Sergi Salonları - İzmir
-**Proje Türü**: Sergi Salonları  
-**Alan**: 18.600 m²  
-**Tamamlanma**: 2022  
-**Özellikler**: Modüler sergi alanları, uluslararası fuar standartları
-
----
 
 # Çözüm Ortaklarımız
 
