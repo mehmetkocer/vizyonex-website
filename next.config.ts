@@ -15,10 +15,9 @@ const nextConfig: NextConfig = {
   // Skip build-time bundling of 'server-only' packages
   serverExternalPackages: [],
   
-  // Optional: Configure base path if deploying to a subdirectory
-  // Uncomment and modify if deploying to https://username.github.io/repository-name/
-  // basePath: '/repository-name',
-  // assetPrefix: '/repository-name/',
+  // Configure base path for GitHub Pages deployment
+  basePath: '/vizyonex-website',
+  assetPrefix: '/vizyonex-website/',
 };
 
 export default nextConfig;
