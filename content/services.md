@@ -3,105 +3,41 @@ title: "Hizmetlerimiz"
 description: "Vizyonex'in sunduğu profesyonel hizmetler ve çözümler"
 ---
 
-# Endüstriyel Tesisler
+# Alçı Sıva
 
-Endüstri sektörünün ihtiyaçlarına yönelik çelik konstrüksiyon çözümleri sunuyoruz. Fabrika binaları, depo ve lojistik merkezleri, üretim tesisleri için dayanıklı ve ekonomik yapılar inşa ediyoruz.
+Duvar ve tavanların düzgün, pürüzsüz bir yüzeye kavuşması için yapılan kaplama işlemidir. Boyaya hazır hale getirir.
 
-## Özellikler
-- Büyük açıklık gerektiren yapılar
-- Ağır yük taşıma kapasitesi
-- Hızlı montaj imkanı
-- Modüler tasarım esnekliği
-- Yangın dayanımlı çelik yapılar
+# Boya
 
-## Uygulama Alanları
-- Otomotiv fabrikaları
-- Gıda işleme tesisleri
-- Tekstil fabrikaları
-- Makina üretim tesisleri
-- Lojistik ve depolama merkezleri
+İç ve dış cephe yüzeylerinin renklendirilmesi ve korunması için yapılan uygulamadır. Estetik ve temizlik sağlar.
 
----
+# Sıvamatik (Makine Sıvası)
 
-# Kentsel Yapılar
+Özel makinelerle yapılan hızlı ve homojen sıva uygulamasıdır. Zamandan tasarruf sağlar ve düzgün yüzey elde edilir.
 
-Daireler, ofis binaları, showroom ve mağazalar için modern ve estetik çelik konstrüksiyon çözümleri geliştiriyoruz.
+# Fayans (Seramik Kaplama)
 
-## Özellikler
-- Estetik tasarım seçenekleri
-- Enerji verimli yapı sistemi
-- Hızlı inşaat süreci
-- Geniş iç mekan imkanı
-- Modern cephe sistemleri
+Islak hacimler başta olmak üzere zemin ve duvarlara seramik veya porselen kaplama yapılmasıdır. Hem hijyenik hem dayanıklıdır.
 
-## Uygulama Alanları
-- Alışveriş merkezleri
-- Ofis kompleksleri
-- Showroom ve sergisalonları
-- Spor kompleksleri
-- Kültür ve sanat merkezleri
+# Duvar Örme
 
----
+Tuğla, bims veya gazbeton gibi malzemelerle iç ve dış duvarların inşa edilmesidir. Alanları bölmek veya yapı oluşturmak için yapılır.
 
-# Mimari Çelik
+# Alçıpan (Asma Tavan ve Bölme Duvar Sistemleri)
 
-Estetik ve fonksiyonelliği bir araya getiren mimari çelik projelerinde uzmanız. Yapılara özgün karakter kazandıran tasarım çözümleri sunuyoruz.
+İç mekanlarda hafif bölmeler ve dekoratif tavan sistemleri oluşturmak için kullanılan kuru yapı sistemidir.
 
-## Özellikler
-- Özgün tasarım çözümleri
-- Yüksek estetik değer
-- Dayanıklı malzeme kullanımı
-- Çevre dostu üretim
-- Uzun ömürlü yapılar
+# Karkas Sistemleri (Taşıyıcı Çelik/Alüminyum Sistemler)
 
-## Uygulama Alanları
-- Çelik merdiven ve korkuluklar
-- Çelik çatı sistemleri
-- Dekoratif çelik elemanlar
-- Asma köprüler
-- Sanat eserleri ve heykeller
+Alçıpan, cephe kaplamaları ve diğer uygulamaların iskeletini oluşturan metal konstrüksiyon sistemlerdir.
 
----
+# Mantolama (Isı Yalıtımı)
 
-# Teknik Danışmanlık
+Binaların dış cephesine uygulanan yalıtım sistemidir. Isı kaybını azaltır, enerji tasarrufu sağlar.
 
-Çelik yapı projelerinde müşterilerimize teknik danışmanlık hizmetleri sunuyoruz. Optimum çözümler için uzman desteği sağlıyoruz.
+# Şap (Zemin Düzeltme Harcı)
 
-## Danışmanlık Alanları
-- Statik hesaplamalar
-- Malzeme seçimi ve optimizasyonu
-- Deprem dayanımı analizi
-- Yangın güvenlik sistemleri
-- Enerji verimliliği çözümleri
-
-## Teknik Hizmetler
-- 3D modelleme ve görselleştirme
-- Statik analiz raporları
-- Yapı denetim hizmetleri
-- Kalite kontrol testleri
-- Garanti ve bakım hizmetleri
-
----
-
-# Montaj ve Uygulama
-
-Deneyimli montaj ekibimizle projelerinizi güvenli ve hızlı bir şekilde hayata geçiriyoruz. Tüm iş güvenliği standartlarına uygun çalışma yapıyoruz.
-
-## Montaj Özellikleri
-- Profesyonel montaj ekibi
-- Modern ekipman kullanımı
-- İş güvenliği önceliği
-- Hızlı ve kaliteli uygulama
-- 7/24 teknik destek
-
-## Güvenlik Standartları
-- İSG prosedürlerine tam uyum
-- Sertifikalı montaj personeli
-- Güvenlik ekipmanları kullanımı
-- Risk analizi ve önlemleri
-- Acil durum müdahale planları
-
----
+Zeminleri düzleştirmek ve kaplama malzemelerine uygun hale getirmek için dökülen özel harçtır.
 
 ## Neden Vizyonex?
 

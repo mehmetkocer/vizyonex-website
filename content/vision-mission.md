@@ -5,7 +5,7 @@ description: "Vizyonex'in vizyonu, misyonu ve temel değerleri"
 
 # Vizyonumuz
 
-Endüstriyel çelik konstrüksiyon alanında Türkiye'nin lider şirketi olmak ve uluslararası pazarlarda güçlü bir marka haline gelerek, sürdürülebilir ve yenilikçi çözümlerle sektörün geleceğini şekillendirmek.
+Yaşam alanlarını estetik, sağlam ve çağdaş dokunuşlarla geleceğe taşımak.
 
 ## Hedeflerimiz
 
@@ -16,7 +16,7 @@ Endüstriyel çelik konstrüksiyon alanında Türkiye'nin lider şirketi olmak v
 
 # Misyonumuz
 
-Modern mühendislik anlayışı ve deneyimli kadromuzla, endüstriyel tesisler, ticari yapılar ve mimari çelik projelerinde müşterilerimize güvenilir, kaliteli ve ekonomik çözümler sunarak, onların başarısına ortak olmak.
+Alçı, sıva, boya, fayans ve tüm iç-dış yapı uygulamalarında kaliteli malzeme ve uzman işçilikle güvenilir çözümler sunmak.
 
 ## Temel Değerlerimiz
 

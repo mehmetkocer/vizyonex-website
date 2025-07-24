@@ -252,6 +252,172 @@ export function parseProjects(content: string): {
   return projectsByCategory;
 }
 
+// Parse work areas and solution partners from projects content
+export function parseWorkAreasAndPartners(content: string): {
+  workAreas: {
+    slogan: string;
+    description: string;
+    items: Array<{
+      name: string;
+      description: string;
+    }>;
+  };
+  solutionPartners: {
+    slogan: string;
+    description: string;
+    items: Array<{
+      name: string;
+      description: string;
+    }>;
+  };
+} {
+  const result = {
+    workAreas: {
+      slogan: '',
+      description: '',
+      items: [] as Array<{ name: string; description: string; }>
+    },
+    solutionPartners: {
+      slogan: '',
+      description: '',
+      items: [] as Array<{ name: string; description: string; }>
+    }
+  };
+
+  // Split content by h2 headers
+  const h2Sections = content.split(/<h2[^>]*>/);
+  
+  h2Sections.forEach((section) => {
+    const cleanSection = section.trim();
+    
+    // Check for work areas section
+    if (cleanSection.includes('Çalışma Alanlarımız') || cleanSection.includes('🏗️')) {
+      // Extract slogan (text between <em> tags with *)
+      const sloganMatch = cleanSection.match(/<em>\*([^*]+)\*<\/em>/);
+      if (sloganMatch) {
+        result.workAreas.slogan = sloganMatch[1].trim();
+      }
+      
+      // Extract description paragraph after slogan
+      const paragraphs = cleanSection.match(/<p>([^<]+)<\/p>/g);
+      if (paragraphs && paragraphs.length > 1) {
+        // Skip the first paragraph (usually contains title text) and get the description
+        const descMatch = paragraphs[1].match(/<p>([^<]+)<\/p>/);
+        if (descMatch) {
+          result.workAreas.description = descMatch[1].trim();
+        }
+      }
+      
+      // Extract list items with strong tags
+      const listItemsMatch = cleanSection.match(/<ul>([\s\S]*?)<\/ul>/);
+      if (listItemsMatch) {
+        const listContent = listItemsMatch[1];
+        const itemMatches = listContent.matchAll(/<li><strong>([^<]+)<\/strong><br\s*\/?>\s*([^<]+)<\/li>/g);
+        
+        for (const match of itemMatches) {
+          result.workAreas.items.push({
+            name: match[1].trim(),
+            description: match[2].trim()
+          });
+        }
+      }
+    }
+    
+    // Check for solution partners section  
+    if (cleanSection.includes('Çözüm Ortaklarımız') || cleanSection.includes('🤝')) {
+      // Extract slogan
+      const sloganMatch = cleanSection.match(/<em>\*([^*]+)\*<\/em>/);
+      if (sloganMatch) {
+        result.solutionPartners.slogan = sloganMatch[1].trim();
+      }
+      
+      // Extract description
+      const paragraphs = cleanSection.match(/<p>([^<]+)<\/p>/g);
+      if (paragraphs && paragraphs.length > 1) {
+        const descMatch = paragraphs[1].match(/<p>([^<]+)<\/p>/);
+        if (descMatch) {
+          result.solutionPartners.description = descMatch[1].trim();
+        }
+      }
+      
+      // Extract list items
+      const listItemsMatch = cleanSection.match(/<ul>([\s\S]*?)<\/ul>/);
+      if (listItemsMatch) {
+        const listContent = listItemsMatch[1];
+        const itemMatches = listContent.matchAll(/<li><strong>([^<]+)<\/strong><br\s*\/?>\s*([^<]+)<\/li>/g);
+        
+        for (const match of itemMatches) {
+          result.solutionPartners.items.push({
+            name: match[1].trim(),
+            description: match[2].trim()
+          });
+        }
+      }
+    }
+  });
+
+  // If parsing failed, use fallback data based on raw markdown structure
+  if (result.workAreas.items.length === 0) {
+    result.workAreas = {
+      slogan: 'Her yapıya özel uzmanlık.',
+      description: 'Vizyonex Yapı olarak, küçük çaplı tadilat projelerinden büyük ölçekli inşaatlara kadar geniş bir yelpazede hizmet sunuyoruz. Deneyimli ekibimizle hem bireysel hem kurumsal müşterilere çözüm üretiyoruz.',
+      items: [
+        {
+          name: 'Konut Projeleri',
+          description: 'Daire, villa, rezidans gibi yaşam alanlarında iç ve dış yapı uygulamaları.'
+        },
+        {
+          name: 'Ticari Yapılar',
+          description: 'Ofisler, mağazalar, AVM\'ler ve iş merkezlerinde modern ve işlevsel çözümler.'
+        },
+        {
+          name: 'Endüstriyel Tesisler',
+          description: 'Fabrika, depo ve üretim alanlarında dayanıklı yapı uygulamaları.'
+        },
+        {
+          name: 'Eğitim & Sağlık Kurumları',
+          description: 'Okul, hastane, klinik gibi toplumsal yapılarda güvenli ve hijyenik yapı çözümleri.'
+        },
+        {
+          name: 'Tadilat ve Yenileme Projeleri',
+          description: 'Mevcut yapıların modernize edilmesi, bakım ve onarımı.'
+        }
+      ]
+    };
+  }
+
+  if (result.solutionPartners.items.length === 0) {
+    result.solutionPartners = {
+      slogan: 'Kalite, iş birliğiyle başlar.',
+      description: 'Proje başarımızın arkasında yalnızca kendi uzmanlığımız değil, aynı zamanda güçlü ve güvenilir çözüm ortaklarımız da yer alıyor. Malzeme kalitesinden uygulama sürecine kadar her aşamada birlikte hareket ettiğimiz iş ortaklarımızla en iyi sonucu hedefliyoruz.',
+      items: [
+        {
+          name: 'Yapı Malzemeleri Tedarikçileri',
+          description: 'Kaliteli sıva, boya, alçıpan, yalıtım ve seramik malzemelerini temin ettiğimiz güvenilir markalar.'
+        },
+        {
+          name: 'Teknik Ekipman Sağlayıcıları',
+          description: 'İnşaat makineleri, sıva makineleri ve şantiye ekipmanları konusunda uzman iş ortakları.'
+        },
+        {
+          name: 'Mühendislik & Mimarlık Ofisleri',
+          description: 'Projelerimizin teknik planlama ve görselleştirme aşamalarında birlikte çalıştığımız profesyonel ekipler.'
+        },
+        {
+          name: 'Taşeron ve Usta Ekipleri',
+          description: 'İhtiyaca göre destek aldığımız, iş disiplini yüksek uygulama ekipleri.'
+        },
+        {
+          name: 'Lojistik ve Nakliye Firmaları',
+          description: 'Malzeme ve ekipmanların zamanında şantiye alanlarına ulaştırılmasını sağlayan lojistik partnerlerimiz.'
+        }
+      ]
+    };
+  }
+
+  return result;
+}
+
 // Utility to check if markdown files exist
 export function checkMarkdownFilesExist(): { [key: string]: boolean } {
   const requiredFiles = ['vision-mission', 'services', 'projects'];

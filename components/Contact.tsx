@@ -1,5 +1,6 @@
 import React from 'react';
 import ContactForm from './ContactForm';
+import MapComponent from './MapComponent';
 
 export default function Contact() {
   return (
@@ -38,9 +39,8 @@ export default function Contact() {
                   <div>
                     <h4 className="font-semibold text-text-default text-sm lg:text-base">Adres</h4>
                     <p className="text-text-default mt-1 text-sm lg:text-base">
-                      Organize Sanayi Bölgesi<br />
-                      1. Cadde No: 45/A<br />
-                      16140 Nilüfer / Bursa
+                      İstanbul merkezli<br />
+                      Türkiye genelinde hizmet
                     </p>
                   </div>
                 </div>
@@ -51,8 +51,8 @@ export default function Contact() {
                   </svg>
                   <div>
                     <h4 className="font-semibold text-text-default text-sm lg:text-base">Telefon</h4>
-                    <a href="tel:+902244441234" className="text-accent hover:text-accent/80 transition-colors text-sm lg:text-base">
-                      +90 (224) 444 12 34
+                    <a href="tel:+905524251381" className="text-accent hover:text-accent/80 transition-colors text-sm lg:text-base">
+                      +90 (552) 425 13 81
                     </a>
                   </div>
                 </div>
@@ -63,8 +63,8 @@ export default function Contact() {
                   </svg>
                   <div>
                     <h4 className="font-semibold text-text-default text-sm lg:text-base">E-posta</h4>
-                    <a href="mailto:info@vizyonex.com" className="text-accent hover:text-accent/80 transition-colors text-sm lg:text-base break-all">
-                      info@vizyonex.com
+                    <a href="mailto:info@vizyonexyapi.com" className="text-accent hover:text-accent/80 transition-colors text-sm lg:text-base break-all">
+                      info@vizyonexyapi.com
                     </a>
                   </div>
                 </div>
@@ -76,7 +76,7 @@ export default function Contact() {
                   <div>
                     <h4 className="font-semibold text-text-default text-sm lg:text-base">Web Sitesi</h4>
                     <a href="https://www.vizyonex.com" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-accent/80 transition-colors text-sm lg:text-base break-all">
-                      www.vizyonex.com
+                      www.vizyonexyapi.com
                     </a>
                   </div>
                 </div>
@@ -181,42 +181,33 @@ export default function Contact() {
         <div className="mt-12 lg:mt-16">
           <div className="bg-white rounded-lg shadow-lg p-6 lg:p-8">
             <h3 className="text-xl lg:text-2xl font-bold text-primary mb-6 text-center">
-              Ofis Lokasyonumuz
+              Faaliyet Alanımız
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 items-center">
               <div>
                 <h4 className="text-lg lg:text-xl font-semibold text-text-default mb-4">
-                  Bursa Organize Sanayi Bölgesi
+                  İstanbul Merkezli Hizmet
                 </h4>
                 <p className="text-text-default leading-relaxed mb-4 text-sm lg:text-base">
-                  Modern tesislerimizde, endüstriyel çelik konstrüksiyon ve mimari çelik 
-                  projelerinde uzman ekibimizle hizmet vermekteyiz. Organize sanayi bölgesindeki 
-                  konumumuz, hem lojistik hem de üretim açısından büyük avantajlar sağlamaktadır.
+                  İstanbul merkezli olarak, endüstriyel çelik konstrüksiyon ve mimari çelik 
+                  projelerinde uzman ekibimizle Türkiye genelinde hizmet vermekteyiz. İstanbul&apos;daki 
+                  stratejik konumumuz, proje koordinasyonu ve müşteri erişimi açısından büyük avantajlar sağlamaktadır.
                 </p>
                 <div className="flex items-start text-xs lg:text-sm text-text-default">
                   <svg className="w-3 h-3 lg:w-4 lg:h-4 text-accent mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                   <span>
-                    Bursa şehir merkezine 25 km, İstanbul&apos;a 150 km mesafedeyiz.
-                    Otopark alanımız mevcuttur.
+                    İstanbul&apos;dan Türkiye genelinde hizmet veriyoruz. 
+                    Projeleriniz için sizinle buluşmaya hazırız.
                   </span>
                 </div>
               </div>
               <div className="bg-gray-100 rounded-lg p-6 lg:p-8 text-center">
-                {/* Placeholder for map - will be replaced with actual map integration */}
-                <div className="w-full h-48 lg:h-64 bg-gray-200 rounded-lg flex items-center justify-center">
-                  <div className="text-center">
-                    <svg className="w-8 h-8 lg:w-12 lg:h-12 text-gray-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                    <p className="text-gray-500 font-medium text-sm lg:text-base">Harita Yakında Eklenecek</p>
-                    <p className="text-gray-400 text-xs lg:text-sm mt-1">Google Maps entegrasyonu</p>
-                  </div>
-                </div>
+                {/* OpenStreetMap integration */}
+                <MapComponent />
                 <a
-                  href="https://maps.google.com/?q=Bursa+Organize+Sanayi+Bölgesi"
+                  href="https://maps.google.com/?q=İstanbul,+Türkiye"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center mt-4 px-4 lg:px-6 py-2 bg-accent text-text-light rounded-lg hover:bg-accent/90 transition-colors text-sm lg:text-base"

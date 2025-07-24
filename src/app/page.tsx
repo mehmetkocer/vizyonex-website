@@ -6,7 +6,7 @@ import Showcase from '../../components/Showcase';
 import Contact from '../../components/Contact';
 import Footer from '../../components/Footer';
 import FloatingButtons from '../../components/FloatingButtons';
-import { getMarkdownContent, parseStatistics, parseServiceCards, parseProjects } from '../../lib/markdown';
+import { getMarkdownContent, parseStatistics, parseServiceCards, parseWorkAreasAndPartners } from '../../lib/markdown';
 import fs from 'fs';
 import path from 'path';
 
@@ -34,7 +34,7 @@ async function getPageData() {
 
     // Get projects data
     const projectsData = await getMarkdownContent('projects');
-    const projects = parseProjects(projectsData.content);
+    const workAreasAndPartners = parseWorkAreasAndPartners(projectsData.content);
     
     return {
       visionMission: {
@@ -48,7 +48,7 @@ async function getPageData() {
         ]
       },
       services: services.length > 0 ? services : [],
-      projects: projects
+      workAreasAndPartners: workAreasAndPartners
     };
   } catch (error) {
     console.error('Error loading page data:', error);
@@ -64,7 +64,10 @@ async function getPageData() {
         ]
       },
       services: [],
-      projects: {}
+      workAreasAndPartners: {
+        workAreas: { slogan: '', description: '', items: [] },
+        solutionPartners: { slogan: '', description: '', items: [] }
+      }
     };
   }
 }
@@ -82,7 +85,7 @@ export default async function Home() {
         stats={pageData.visionMission.stats}
       />
       <Services services={pageData.services} />
-      <Showcase projects={pageData.projects} />
+      <Showcase workAreasAndPartners={pageData.workAreasAndPartners} />
       <Contact />
       <Footer />
       <FloatingButtons />

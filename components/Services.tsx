@@ -157,7 +157,6 @@ export default function Services({ services: markdownServices = [] }: ServicesPr
           {servicesToDisplay.map((service) => (
             <ServiceCard
               key={service.id}
-              icon={service.icon}
               title={service.title}
               description={service.description}
             />

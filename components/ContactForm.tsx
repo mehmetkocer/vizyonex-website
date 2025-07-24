@@ -107,7 +107,7 @@ export default function ContactForm() {
               required
               value={formData.name}
               onChange={handleInputChange}
-              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-200 ${
+              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-200 text-sm text-text-default ${
                 getFieldError('name') ? 'border-red-500 bg-red-50' : 'border-gray-300'
               }`}
               placeholder="Adınız ve soyadınız"
@@ -128,7 +128,7 @@ export default function ContactForm() {
               required
               value={formData.email}
               onChange={handleInputChange}
-              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-200 ${
+              className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-200 text-sm text-text-default ${
                 getFieldError('email') ? 'border-red-500 bg-red-50' : 'border-gray-300'
               }`}
               placeholder="ornek@email.com"
@@ -150,7 +150,7 @@ export default function ContactForm() {
             required
             value={formData.subject}
             onChange={handleInputChange}
-            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-200 ${
+            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-200 text-sm text-text-default ${
               getFieldError('subject') ? 'border-red-500 bg-red-50' : 'border-gray-300'
             }`}
           >
@@ -180,7 +180,7 @@ export default function ContactForm() {
             value={formData.message}
             onChange={handleInputChange}
             rows={6}
-            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-200 resize-vertical ${
+            className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent transition-all duration-200 resize-vertical text-sm text-text-default ${
               getFieldError('message') ? 'border-red-500 bg-red-50' : 'border-gray-300'
             }`}
             placeholder="Projeniz hakkında detaylı bilgi veriniz..."
