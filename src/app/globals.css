@@ -59,6 +59,20 @@ body {
   overflow-x: hidden;
 }
 
+/* Gallery Animation - Images drifting from left to right */
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-scroll-right {
+  animation: scroll-right 60s linear infinite;
+}
+
 /* Background Image Optimization */
 .bg-cover {
   background-size: cover;
@@ -100,5 +114,10 @@ img {
   h1, h2, h3, h4, h5, h6, p, span, div {
     word-wrap: break-word;
     overflow-wrap: break-word;
+  }
+  
+  /* Faster animation on mobile for better performance */
+  .animate-scroll-right {
+    animation: scroll-right 45s linear infinite;
   }
 }

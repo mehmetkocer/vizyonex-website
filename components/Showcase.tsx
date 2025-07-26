@@ -156,35 +156,36 @@ export default function Showcase({ workAreasAndPartners }: ShowcaseProps) {
             Çalışma Alanlarımız ve Çözüm Ortaklarımız
           </h2>
           <p className="text-base md:text-lg text-text-default max-w-3xl mx-auto leading-relaxed">
-            Farklı sektörlerdeki deneyimimiz ve güçlü iş ortaklıklarımızla, 
-            projelerinize en uygun çözümleri sunuyoruz.
+            Proje başarımızın arkasında yalnızca kendi uzmanlığımız değil, aynı zamanda güçlü ve güvenilir çözüm ortaklarımız da yer alıyor. Malzeme kalitesinden uygulama sürecine kadar her aşamada birlikte hareket ettiğimiz iş ortaklarımızla en iyi sonucu hedefliyoruz.
           </p>
           <div className="w-24 h-1 bg-accent mx-auto mt-6"></div>
         </div>
 
         {/* Tabs Navigation */}
         <div className="mb-12">
-          <div className="flex justify-center">
-            <div className="bg-white rounded-lg p-2 shadow-md inline-flex gap-2">
+          <div className="flex justify-center px-4 sm:px-0">
+            <div className="bg-white rounded-lg p-2 shadow-md w-full max-w-[90%] sm:max-w-none sm:w-auto flex gap-2">
               <button
                 onClick={() => setActiveTab('work-areas')}
-                className={`px-6 py-3 rounded-md font-semibold transition-all duration-300 whitespace-nowrap ${
+                className={`px-4 py-3 rounded-md font-semibold transition-all duration-300 text-center min-w-0 flex-1 sm:flex-none sm:whitespace-nowrap ${
                   isWorkAreasActive
                     ? 'bg-accent text-text-light shadow-lg transform scale-105'
                     : 'text-text-default hover:bg-gray-100 hover:text-accent'
                 }`}
               >
-                Çalışma Alanlarımız
+                <span className="block sm:inline">Çalışma</span>
+                <span className="block sm:inline"> Alanlarımız</span>
               </button>
               <button
                 onClick={() => setActiveTab('solution-partners')}
-                className={`px-6 py-3 rounded-md font-semibold transition-all duration-300 whitespace-nowrap ${
+                className={`px-4 py-3 rounded-md font-semibold transition-all duration-300 text-center min-w-0 flex-1 sm:flex-none sm:whitespace-nowrap ${
                   !isWorkAreasActive
                     ? 'bg-accent text-text-light shadow-lg transform scale-105'
                     : 'text-text-default hover:bg-gray-100 hover:text-accent'
                 }`}
               >
-                Çözüm Ortaklarımız
+                <span className="block sm:inline">Çözüm</span>
+                <span className="block sm:inline"> Ortaklarımız</span>
               </button>
             </div>
           </div>

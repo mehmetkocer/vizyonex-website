@@ -1,5 +1,6 @@
 import Header from '../../components/Header';
 import Hero from '../../components/Hero';
+import Gallery from '../../components/Gallery';
 import VisionMission from '../../components/VisionMission';
 import Services from '../../components/Services';
 import Showcase from '../../components/Showcase';
@@ -77,17 +78,38 @@ export default async function Home() {
 
   return (
     <div className="min-h-screen overflow-x-hidden w-full">
+      {/* Header */}
       <Header />
-      <Hero />
-      <VisionMission
-        visionContent={pageData.visionMission.visionContent}
-        missionContent={pageData.visionMission.missionContent}
-        stats={pageData.visionMission.stats}
-      />
-      <Services services={pageData.services} />
-      <Showcase workAreasAndPartners={pageData.workAreasAndPartners} />
-      <Contact />
+      
+      {/* Content Area - Organized into Sections */}
+      <main className="w-full">
+        {/* Hero Section */}
+        <Hero />
+        
+        {/* Gallery Section */}
+        <Gallery />
+        
+        {/* Vision & Mission Section */}
+        <VisionMission
+          visionContent={pageData.visionMission.visionContent}
+          missionContent={pageData.visionMission.missionContent}
+          stats={pageData.visionMission.stats}
+        />
+        
+        {/* Services Section */}
+        <Services services={pageData.services} />
+        
+        {/* Projects Showcase Section */}
+        <Showcase workAreasAndPartners={pageData.workAreasAndPartners} />
+        
+        {/* Contact Section */}
+        <Contact />
+      </main>
+      
+      {/* Footer */}
       <Footer />
+      
+      {/* Floating Action Buttons */}
       <FloatingButtons />
     </div>
   );

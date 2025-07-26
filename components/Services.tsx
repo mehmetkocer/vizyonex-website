@@ -1,4 +1,6 @@
-import React from 'react';
+"use client";
+
+import React, { useEffect, useRef, useState } from 'react';
 import ServiceCard from './ServiceCard';
 
 interface Service {
@@ -20,6 +22,11 @@ interface ServicesProps {
 }
 
 export default function Services({ services: markdownServices = [] }: ServicesProps) {
+  const [activeCardIndex, setActiveCardIndex] = useState<number | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+  const servicesGridRef = useRef<HTMLDivElement>(null);
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+
   const services: Service[] = [
     {
       id: 1,
@@ -136,6 +143,68 @@ export default function Services({ services: markdownServices = [] }: ServicesPr
   // Use markdown services if available, otherwise use hardcoded services
   const servicesToDisplay = convertedMarkdownServices.length > 0 ? convertedMarkdownServices : services;
 
+  // Function to find which card is most centered in viewport
+  const findCenteredCard = () => {
+    if (!servicesGridRef.current || !isMobile) return;
+
+    const viewportCenter = window.innerHeight / 2;
+    let closestIndex = null;
+    let closestDistance = Infinity;
+
+    cardRefs.current.forEach((cardRef, index) => {
+      if (cardRef) {
+        const rect = cardRef.getBoundingClientRect();
+        const cardCenter = rect.top + rect.height / 2;
+        const distance = Math.abs(cardCenter - viewportCenter);
+
+        // Only consider cards that are at least partially visible
+        if (rect.bottom > 0 && rect.top < window.innerHeight) {
+          if (distance < closestDistance) {
+            closestDistance = distance;
+            closestIndex = index;
+          }
+        }
+      }
+    });
+
+    setActiveCardIndex(closestIndex);
+  };
+
+  useEffect(() => {
+    const checkMobile = () => {
+      const mobile = window.innerWidth < 768; // md breakpoint
+      setIsMobile(mobile);
+      
+      // Reset active card when switching to desktop
+      if (!mobile) {
+        setActiveCardIndex(null);
+      }
+    };
+
+    const handleScroll = () => {
+      if (isMobile) {
+        findCenteredCard();
+      }
+    };
+
+    // Initial checks
+    checkMobile();
+    if (isMobile) {
+      findCenteredCard();
+    }
+
+    // Add listeners
+    window.addEventListener('resize', checkMobile);
+    if (isMobile) {
+      window.addEventListener('scroll', handleScroll, { passive: true });
+    }
+
+    return () => {
+      window.removeEventListener('resize', checkMobile);
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [isMobile]);
+
   return (
     <section id="services" className="py-16 bg-white">
       <div className="container mx-auto px-4">
@@ -145,21 +214,29 @@ export default function Services({ services: markdownServices = [] }: ServicesPr
             Sunduğumuz Hizmetler
           </h2>
           <p className="text-lg text-text-default max-w-3xl mx-auto leading-relaxed">
-            Mühendislik alanındaki geniş deneyimimiz ve uzman ekibimizle, 
-            projelerinizin her aşamasında yanınızdayız. Kalite ve güvenilirlik 
-            odaklı hizmetlerimizle fark yaratıyoruz.
+          Vizyonex Yapı olarak, küçük çaplı tadilat projelerinden büyük ölçekli inşaatlara kadar geniş bir yelpazede hizmet sunuyoruz. Deneyimli ekibimizle hem bireysel hem kurumsal müşterilere çözüm üretiyoruz.
           </p>
           <div className="w-24 h-1 bg-accent mx-auto mt-6"></div>
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {servicesToDisplay.map((service) => (
-            <ServiceCard
+        <div 
+          ref={servicesGridRef}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          {servicesToDisplay.map((service, index) => (
+            <div
               key={service.id}
-              title={service.title}
-              description={service.description}
-            />
+              ref={(el) => {
+                cardRefs.current[index] = el;
+              }}
+            >
+              <ServiceCard
+                title={service.title}
+                description={service.description}
+                isActive={activeCardIndex === index}
+              />
+            </div>
           ))}
         </div>
 

@@ -39,7 +39,7 @@ export default function Contact() {
                   <div>
                     <h4 className="font-semibold text-text-default text-sm lg:text-base">Adres</h4>
                     <p className="text-text-default mt-1 text-sm lg:text-base">
-                      İstanbul merkezli<br />
+                      İstanbul-Esenler<br />
                       Türkiye genelinde hizmet
                     </p>
                   </div>
@@ -186,20 +186,17 @@ export default function Contact() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 items-center">
               <div>
                 <h4 className="text-lg lg:text-xl font-semibold text-text-default mb-4">
-                  İstanbul Merkezli Hizmet
+                  Adres: İstanbul, Esenler
                 </h4>
                 <p className="text-text-default leading-relaxed mb-4 text-sm lg:text-base">
-                  İstanbul merkezli olarak, endüstriyel çelik konstrüksiyon ve mimari çelik 
-                  projelerinde uzman ekibimizle Türkiye genelinde hizmet vermekteyiz. İstanbul&apos;daki 
-                  stratejik konumumuz, proje koordinasyonu ve müşteri erişimi açısından büyük avantajlar sağlamaktadır.
+                  Vizyonex Yapı olarak, Türkiye genelinde hizmet vermekteyiz.
                 </p>
                 <div className="flex items-start text-xs lg:text-sm text-text-default">
                   <svg className="w-3 h-3 lg:w-4 lg:h-4 text-accent mt-1 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                   <span>
-                    İstanbul&apos;dan Türkiye genelinde hizmet veriyoruz. 
-                    Projeleriniz için sizinle buluşmaya hazırız.
+                    Vizyonex Yapı olarak, Türkiye genelinde hizmet vermekteyiz.
                   </span>
                 </div>
               </div>
@@ -207,7 +204,7 @@ export default function Contact() {
                 {/* OpenStreetMap integration */}
                 <MapComponent />
                 <a
-                  href="https://maps.google.com/?q=İstanbul,+Türkiye"
+                  href="https://maps.google.com/?q=İstanbul,+Esenler"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center mt-4 px-4 lg:px-6 py-2 bg-accent text-text-light rounded-lg hover:bg-accent/90 transition-colors text-sm lg:text-base"

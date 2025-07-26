@@ -11,18 +11,21 @@ export default function Hero({
   tagline = "Hayalinizdeki projeleri, mühendislik uzmanlığımızla gerçeğe dönüştürüyoruz."
 }: HeroProps) {
   return (
-    <section id="home" className="relative min-h-[85vh] md:min-h-screen flex items-center justify-center">
+    <section id="home" className="relative h-[340px] md:h-[380px] flex items-center justify-center">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <div 
           className="w-full h-full bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url('/image1.jpg')`, // Main background image
+            backgroundImage: `url('/image1.jpg')`,
             backgroundPosition: 'center center',
           }}
         >
-          {/* Dark Overlay */}
-          <div className="absolute inset-0 bg-primary/70"></div>
+          {/* 50% Transparency Overlay */}
+          <div className="absolute inset-0 bg-primary/50"></div>
+          
+          {/* Bottom Gradient Overlay */}
+          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-secondary to-transparent"></div>
         </div>
       </div>
 
@@ -30,27 +33,30 @@ export default function Hero({
       <div className="relative z-10 container mx-auto px-4 text-center">
         <div className="max-w-4xl mx-auto">
           {/* Main Headline */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-text-light mb-6 leading-tight">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-text-light mb-4 leading-tight">
             {headline}
           </h1>
           
           {/* Tagline */}
-          <p className="text-lg md:text-xl lg:text-2xl text-text-light mb-8 leading-relaxed opacity-90 max-w-3xl mx-auto">
+          <p className="text-base md:text-lg lg:text-xl text-text-light mb-6 leading-relaxed opacity-90 max-w-3xl mx-auto">
             {tagline}
           </p>
           
         </div>
       </div>
 
-      {/* Scroll Down Button - Positioned at very bottom of hero section */}
-      <div className="absolute bottom-20 sm:bottom-60 left-1/2 transform -translate-x-1/2 z-20">
+      {/* Scroll Down Button - Positioned at bottom of hero section */}
+      <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-20">
         <button
-          onClick={() => window.scrollTo({ top: window.innerHeight * 0.85, behavior: 'smooth' })}
-          className="w-16 h-16 bg-accent/20 hover:bg-accent/30 border-2 border-accent rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:shadow-lg backdrop-blur-sm"
+          onClick={() => {
+            const heroHeight = window.innerWidth >= 768 ? 380 : 340;
+            window.scrollTo({ top: heroHeight, behavior: 'smooth' });
+          }}
+          className="w-12 h-12 md:w-16 md:h-16 bg-accent/20 hover:bg-accent/30 border-2 border-accent rounded-full flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:shadow-lg backdrop-blur-sm"
           aria-label="Scroll down"
         >
           <svg 
-            className="w-8 h-8 text-accent" 
+            className="w-6 h-6 md:w-8 md:h-8 text-accent" 
             fill="none" 
             stroke="currentColor" 
             viewBox="0 0 24 24"
@@ -58,11 +64,6 @@ export default function Hero({
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
           </svg>
         </button>
-      </div>
-
-      {/* Background Pattern/Overlay for additional visual interest */}
-      <div className="absolute inset-0 z-5 pointer-events-none">
-        <div className="absolute bottom-0 left-0 w-full h-64 bg-gradient-to-t from-secondary via-secondary/50 to-transparent"></div>
       </div>
     </section>
   );
