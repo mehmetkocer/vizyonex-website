@@ -94,7 +94,7 @@ export default function FloatingButtons() {
 
       {/* Phone Call Button */}
       <button
-        onClick={() => window.location.href = 'tel:+902244441234'}
+        onClick={() => window.location.href = 'tel:+905524251381'}
         className="group relative w-14 h-14 bg-primary hover:bg-primary/90 text-text-light rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 flex items-center justify-center"
         title="Hemen arayın"
         aria-label="Telefon ile arayın"
