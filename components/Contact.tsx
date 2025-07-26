@@ -129,7 +129,7 @@ export default function Contact() {
               
               <div className="flex space-x-3 lg:space-x-4">
                 <a
-                  href="https://linkedin.com/company/vizyonexyapi"
+                  href=""
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center w-10 h-10 lg:w-12 lg:h-12 bg-[#0077b5] text-white rounded-lg hover:bg-[#005885] transition-colors"
@@ -141,7 +141,7 @@ export default function Contact() {
                 </a>
                 
                 <a
-                  href="https://instagram.com/vizyonexyapi"
+                  href=""
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg hover:from-purple-600 hover:to-pink-600 transition-all"

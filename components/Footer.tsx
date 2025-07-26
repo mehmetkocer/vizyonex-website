@@ -21,7 +21,7 @@ export default function Footer() {
             </p>
             <div className="flex space-x-4">
               <a
-                href="https://linkedin.com/company/vizyonexyapi"
+                href=""
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-text-light/10 rounded-lg flex items-center justify-center hover:bg-accent transition-colors group"
@@ -33,7 +33,7 @@ export default function Footer() {
               </a>
               
               <a
-                href="https://instagram.com/vizyonexyapi"
+                href=""
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-text-light/10 rounded-lg flex items-center justify-center hover:bg-accent transition-colors group"
